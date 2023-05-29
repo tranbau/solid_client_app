@@ -4,14 +4,14 @@ export const generatePath = (base, object) => {
   if (Array.isArray(object)) {
     // eslint-disable-next-line array-callback-return
     object.map((element, index) => {
-      generatePath(base + index.toString(), element);
+      generatePath(`${base}[${index}]`, element);
     });
   }
 
   //an object
   else {
     for (var key in object) {
-      let newBase = base + "_" + key.toString().toLowerCase();
+      let newBase = base + "." + key.toString().toLowerCase();
       if (typeof object[key] === "object") {
         generatePath(newBase, object[key]);
       } else {

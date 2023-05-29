@@ -313,7 +313,7 @@ function VitalSigns() {
           Number(vitalSigns.heartRate)
         );
         myTemperatureThing = setDecimal(
-          myWeightThing,
+          myTemperatureThing,
           fhir.v,
           Number(vitalSigns.temperature)
         );
@@ -382,6 +382,7 @@ function VitalSigns() {
                     ...vitalSigns,
                     weight: e.target.value,
                   });
+                  console.log(vitalSigns.weight)
                 }}
                 disabled={!edit}
               ></input>
@@ -413,7 +414,7 @@ function VitalSigns() {
               ></input>
             </li>
           </ul>
-          <button onClick={() => setEdit(true)} style={{ marginRight: 10 }}>
+          <button onClick={() => setEdit(!edit)} style={{ marginRight: 10 }}>
             Edit
           </button>
           <button onClick={handleSubmit}>Save</button>

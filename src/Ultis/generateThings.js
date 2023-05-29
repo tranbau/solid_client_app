@@ -15,7 +15,7 @@ const generateFunc = (thingName, object, vocabulary) => {
       newThing = addUrl(
         newThing,
         hl7(vocabulary),
-        generateFunc(thingName + index.toString(), element, vocabulary)
+        generateFunc(`${thingName}[${index}]`, element, vocabulary)
       );
     });
   }
@@ -23,7 +23,7 @@ const generateFunc = (thingName, object, vocabulary) => {
   //an object
   else {
     for (var key in object) {
-      let newName = thingName + "_" + key.toString().toLowerCase();
+      let newName = thingName + "." + key.toString().toLowerCase();
 
       //nested object => recursion
       if (typeof object[key] === "object") {
