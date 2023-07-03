@@ -77,7 +77,7 @@ export const Observation_object_template = {
           ],
           text: "Systolic blood pressure",
         },
-        valueQuantity: {
+        valueQuantity: { 
           value: 0,
           unit: "mmHg",
         },
