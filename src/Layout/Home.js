@@ -6,6 +6,8 @@ import { Drugs } from "../Components/Drugs";
 const myEngine = new QueryEngine();
 function Home() {
   const session = useSelector((state) => state.user);
+  console.log(typeof session);
+  console.log(session);
 
   //test fetch directly
   const fetchData = async () => {
@@ -49,3 +51,9 @@ function Home() {
   );
 }
 export default Home;
+
+
+
+
+
+
